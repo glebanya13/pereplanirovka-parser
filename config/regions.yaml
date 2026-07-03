@@ -1,0 +1,58 @@
+# Список судов по региону.
+# sudreshenia_id — ID суда в дереве судебныерешения.рф (/loadCourtTree/simple).
+
+nizhny_novgorod:
+  city: "Нижний Новгород"
+  first_instance_courts:
+    - name: "Автозаводский районный суд г. Нижнего Новгорода"
+      host: "avtozavodsky--nnov.sudrf.ru"
+      district: "Автозаводский район"
+      sudreshenia_id: 1631
+    - name: "Канавинский районный суд г. Нижнего Новгорода"
+      host: "kanavinsky--nnov.sudrf.ru"
+      district: "Канавинский район"
+      sudreshenia_id: 1654
+    - name: "Ленинский районный суд г. Нижнего Новгорода"
+      host: "leninsky--nnov.sudrf.ru"
+      district: "Ленинский район"
+      sudreshenia_id: 1661
+    - name: "Московский районный суд г. Нижнего Новгорода"
+      host: "moskovsky--nnov.sudrf.ru"
+      district: "Московский район"
+      sudreshenia_id: 1664
+    - name: "Нижегородский районный суд г. Нижнего Новгорода"
+      host: "nizegorodsky--nnov.sudrf.ru"
+      district: "Нижегородский район"
+      sudreshenia_id: 1666
+    - name: "Приокский районный суд г. Нижнего Новгорода"
+      host: "prioksky--nnov.sudrf.ru"
+      district: "Приокский район"
+      sudreshenia_id: 1672
+    - name: "Советский районный суд г. Нижнего Новгорода"
+      host: "sovetsky--nnov.sudrf.ru"
+      district: "Советский район"
+      sudreshenia_id: 1677
+    - name: "Сормовский районный суд г. Нижнего Новгорода"
+      host: "sormovsky--nnov.sudrf.ru"
+      district: "Сормовский район"
+      sudreshenia_id: 1679
+
+  appeal_court:
+    name: "Нижегородский областной суд"
+    host: "oblsud--nnov.sudrf.ru"
+    sudreshenia_id: 5
+
+  cassation_court:
+    name: "Первый кассационный суд общей юрисдикции"
+    host: "1kas.sudrf.ru"
+    sudreshenia_id: 6008
+
+  supreme_court:
+    name: "Верховный Суд РФ"
+    host: "vsrf.ru"
+
+  aggregators:
+    - name: "sudact.ru"
+      host: "sudact.ru"
+    - name: "судебныерешения.рф"
+      host: "судебныерешения.рф"
