@@ -54,11 +54,35 @@ output/decisions/           — архив текстов решений
 ## Установка
 
 ```bash
+# macOS / Linux
 python3 -m venv venv
 source venv/bin/activate
+
+# Windows (cmd)
+python -m venv venv
+venv\Scripts\activate.bat
+
+# Windows (PowerShell)
+python -m venv venv
+venv\Scripts\Activate.ps1
+
 pip install -r requirements.txt
 playwright install chromium
 ```
+
+### Windows: ошибка `greenlet` / `DLL load failed`
+
+1. Установите [Microsoft Visual C++ Redistributable (x64)](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist).
+2. Используйте **Python 3.11 или 3.12** (не 3.13+ — с `greenlet` бывают проблемы).
+3. Переустановите пакеты в venv:
+
+```bat
+pip install --upgrade pip
+pip install --force-reinstall greenlet playwright
+playwright install chromium
+```
+
+Проверка: `python -c "import greenlet; print('ok')"`
 
 ## Статус (2026-07-03, обновлено)
 

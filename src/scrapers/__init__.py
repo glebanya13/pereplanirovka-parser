@@ -1,15 +1,8 @@
-"""Скраперы источников данных."""
-from .sudact import SudactScraper
-from .sudreshenia import SudresheniaScraper
-from .sudrf_cms import SudrfCmsScraper
-from .vsrf import VsrfScraper
-
-SudrfDistrictScraper = SudrfCmsScraper
+"""Скраперы источников данных (импортируйте модули напрямую: scrapers.sudreshenia и т.д.)."""
 
 __all__ = [
     "SudactScraper",
     "SudresheniaScraper",
     "SudrfCmsScraper",
-    "SudrfDistrictScraper",
     "VsrfScraper",
 ]

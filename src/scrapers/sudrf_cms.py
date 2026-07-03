@@ -12,8 +12,6 @@ from collections.abc import Iterator
 from datetime import date
 from pathlib import Path
 
-from playwright.sync_api import sync_playwright
-
 from ..config import CourtConfig
 from ..linking import extract_referenced_case_numbers
 from ..markers import extract_expert_orgs, has_bearing_wall_mention, matches_case_type
@@ -59,6 +57,8 @@ class SudrfCmsScraper:
         instance: Instance = Instance.FIRST,
     ) -> Decision | None:
         """Ищет дело по номеру на сайте суда, возвращает карточку + ссылку."""
+        from playwright.sync_api import sync_playwright
+
         date_fmt = "%d.%m.%Y"
         with sync_playwright() as p:
             browser = p.chromium.launch(headless=self.headless)
@@ -122,6 +122,8 @@ class SudrfCmsScraper:
             time.sleep(1)
 
     def _search_result_links(self, date_from: date, date_to: date) -> list[tuple[str, str]]:
+        from playwright.sync_api import sync_playwright
+
         date_fmt = "%d.%m.%Y"
         refs: list[tuple[str, str]] = []
         with sync_playwright() as p:
@@ -146,6 +148,8 @@ class SudrfCmsScraper:
         return refs
 
     def _fetch_page(self, url: str) -> tuple[str, str]:
+        from playwright.sync_api import sync_playwright
+
         with sync_playwright() as p:
             browser = p.chromium.launch(headless=self.headless)
             page = browser.new_page()

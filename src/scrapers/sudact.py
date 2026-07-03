@@ -9,8 +9,6 @@ import logging
 from collections.abc import Iterator
 from datetime import date
 
-from playwright.sync_api import sync_playwright
-
 from ..config import CourtConfig
 from ..markers import matches_case_type
 from ..models import Decision, Instance, Outcome
@@ -49,6 +47,8 @@ class SudactScraper:
             f"&regular-court={court.name}"
         )
         url = f"{_BASE}?{params}"
+
+        from playwright.sync_api import sync_playwright
 
         with sync_playwright() as p:
             browser = p.chromium.launch(headless=self.headless)
